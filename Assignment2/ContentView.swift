@@ -31,16 +31,27 @@ struct OnboardingView: View {
     @Binding var showOnboardingScreen: Bool
 
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Onboarding Screen")
-            Spacer()
-            Button {
-                showOnboardingScreen = true
-            } label: {
-                Text("Continue")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Text("Employee List").font(.system(size: 40, weight: .bold))
+                Spacer()
+                Image(systemName: "person.text.rectangle")
+                    .font(.system(size: 100))
+                    .fontWeight(.semibold)
+                Spacer()
+                Spacer()
+                Button {
+                    showOnboardingScreen = false
+                } label: {
+                    Text("Continue")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .padding([.horizontal], 40)
             }
         }
     }
