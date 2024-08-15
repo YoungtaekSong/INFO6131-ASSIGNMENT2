@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct EmployeeListViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+final class EmployeeListViewModel: ObservableObject {
+    @Published var searchText: String = ""
+    @Published var findEmployees: [EmployeeList] = []
+    
+    private let service: EmployeeListServiceType
+    
+    init(service: EmployeeListServiceType = EmployeeListService()) {
+        self.service = service
     }
-}
-
-#Preview {
-    EmployeeListViewModel()
+    
+    @MainActor
+    func search(for text: String) async {
+        do {
+            if text.isEmpty {
+                findEmployees = []
+            } else {
+                findEmployees = try await service.getList()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }

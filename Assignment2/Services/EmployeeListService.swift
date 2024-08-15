@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol EmployeeLockupServiceType {
+protocol EmployeeListServiceType {
     func getList() async throws -> [EmployeeList]
 }
 
-final class EmployeeLookupService: EmployeeLockupServiceType {
+final class EmployeeListService: EmployeeListServiceType {
     
     private struct APIConstants {
         static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees.json"

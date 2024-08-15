@@ -12,7 +12,7 @@
 		49BA84502C69BA0500534BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA844F2C69BA0500534BA2 /* Assets.xcassets */; };
 		49BA84532C69BA0500534BA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA84522C69BA0500534BA2 /* Preview Assets.xcassets */; };
 		49BA845C2C6AF7E600534BA2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA845B2C6AF7E600534BA2 /* APIError.swift */; };
-		49BA845E2C6AF89000534BA2 /* EmployeeLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA845D2C6AF89000534BA2 /* EmployeeLookupService.swift */; };
+		49BA845E2C6AF89000534BA2 /* EmployeeListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA845D2C6AF89000534BA2 /* EmployeeListService.swift */; };
 		49BA84602C6AFB1E00534BA2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA845F2C6AFB1E00534BA2 /* File.swift */; };
 		49BA84632C6D97F400534BA2 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84622C6D97F400534BA2 /* EmployeeListView.swift */; };
 		49BA84652C6D981A00534BA2 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */; };
@@ -25,7 +25,7 @@
 		49BA844F2C69BA0500534BA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49BA84522C69BA0500534BA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49BA845B2C6AF7E600534BA2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		49BA845D2C6AF89000534BA2 /* EmployeeLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLookupService.swift; sourceTree = "<group>"; };
+		49BA845D2C6AF89000534BA2 /* EmployeeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListService.swift; sourceTree = "<group>"; };
 		49BA845F2C6AFB1E00534BA2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		49BA84622C6D97F400534BA2 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				49BA845B2C6AF7E600534BA2 /* APIError.swift */,
-				49BA845D2C6AF89000534BA2 /* EmployeeLookupService.swift */,
+				49BA845D2C6AF89000534BA2 /* EmployeeListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				49BA84602C6AFB1E00534BA2 /* File.swift in Sources */,
 				49BA844E2C69BA0300534BA2 /* ContentView.swift in Sources */,
 				49BA84632C6D97F400534BA2 /* EmployeeListView.swift in Sources */,
-				49BA845E2C6AF89000534BA2 /* EmployeeLookupService.swift in Sources */,
+				49BA845E2C6AF89000534BA2 /* EmployeeListService.swift in Sources */,
 				49BA844C2C69BA0300534BA2 /* Assignment2App.swift in Sources */,
 				49BA84652C6D981A00534BA2 /* EmployeeListViewModel.swift in Sources */,
 				49BA845C2C6AF7E600534BA2 /* APIError.swift in Sources */,
