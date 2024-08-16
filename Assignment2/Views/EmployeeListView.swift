@@ -12,12 +12,9 @@ struct EmployeeListView: View {
 
     var body: some View {
         NavigationStack {
-            /*
             List(vm.findEmployees, id:\.self.id) { item in
                 Text(item.fullName)
-                Text("----")
             }
-             */
         }
         .searchable(text: $vm.searchText, prompt:"Search for employee")
         .onChange(of: vm.searchText) { oldvalue, newValue in

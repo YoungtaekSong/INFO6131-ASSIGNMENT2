@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EmployeeListServiceType {
-    func getList() async throws -> [Employee]
+    func getList(for searchText: String) async throws -> [Employee]
 }
 
 final class EmployeeListService: EmployeeListServiceType {
@@ -19,9 +19,9 @@ final class EmployeeListService: EmployeeListServiceType {
         //static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json"
     }
     
-    func getList() async throws -> [Employee] {
+    func getList(for searchText: String) async throws -> [Employee] {
         
-        print("call getList")
+        print("call getList => " + searchText)
         
         guard let urlComponents = URLComponents(string: APIConstants.apiUrl) else {
             throw ApiError.invalidRequest("Invalid api request")
@@ -43,15 +43,14 @@ final class EmployeeListService: EmployeeListServiceType {
             throw ApiError.invalidResponse("Sever error code \(statusCode)")
         }
         
-        print(">>>>>>>>>>>>>>>>>>>>>>")
-        
         let employees: Employees = try JSONDecoder().decode(Employees.self, from: data)
         var employeeList: [Employee] = []
         
         for employee in employees.employees {
-            employeeList.append(employee)
+            if employee.fullName.lowercased().contains(searchText.lowercased()) {
+                employeeList.append(employee)
+            }
         }
-        print(">>>>>>>>>>>>>>>>>>>>>>")
         
         return employeeList
     }

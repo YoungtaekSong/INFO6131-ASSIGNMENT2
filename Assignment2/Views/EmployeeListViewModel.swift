@@ -18,12 +18,12 @@ final class EmployeeListViewModel: ObservableObject {
     }
     
     @MainActor
-    func search(for text: String) async {
+    func search(for searchText: String) async {
         do {
-            if text.isEmpty {
-                findEmployees = try await service.getList()
+            if searchText.isEmpty {
+                findEmployees = try await service.getList(for: "")
             } else {
-                findEmployees = try await service.getList()
+                findEmployees = try await service.getList(for: searchText)
             }
         } catch {
             print(error)
