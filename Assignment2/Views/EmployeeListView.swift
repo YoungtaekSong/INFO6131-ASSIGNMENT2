@@ -14,31 +14,47 @@ struct EmployeeListView: View {
         NavigationStack {
             List(vm.findEmployees, id:\.self.id) { item in
                 NavigationLink(destination: EmployeeDetail(employee: item)) {
-                    VStack {
-                        Image(item.photoUrlSmall).imageScale(.large)
-                        Text(item.photoUrlSmall)
-                        Text(item.fullName)
-                        Text(item.team)
+                    HStack {
+                        HStack {
+                            
+                            if let url = URL(string: item.photoUrlSmall) {
+                                AsyncImage(url: url) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                            }
+                        }
+                        VStack {
+                            HStack {
+                                Text(item.fullName)
+                                    .font(.headline)
+                            }
+                            HStack {
+                                Text(item.team)
+                            }
+                        }
                     }
                 }
             }
-        }
-        .navigationDestination(for: Employee.self) { item in
-            EmployeeDetail(employee: item)
-        }
-        .searchable(text: $vm.searchText, prompt:"Search for employee")
-        .onChange(of: vm.searchText) { oldvalue, newValue in
-            Task {
-                await vm.search(for: newValue)
+            .navigationTitle("Employee")
+            .font(.subheadline)
+            .searchable(text: $vm.searchText, prompt:"Search for employee")
+            .onAppear() {
+                Task {
+                    await vm.search(for: "")
+                }
+            }
+            .onChange(of: vm.searchText) { oldvalue, newValue in
+                Task {
+                    await vm.search(for: newValue)
+                }
             }
         }
-        .onAppear() {
-            Task {
-                await vm.search(for: "")
-            }
-        }
-        .font(.subheadline)
-        .navigationTitle("Employee")
     }
 }
 
