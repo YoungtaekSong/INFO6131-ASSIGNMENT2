@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EmployeeListServiceType {
-    func getList() async throws -> [EmployeeList]
+    func getList() async throws -> [Employee]
 }
 
 final class EmployeeListService: EmployeeListServiceType {
@@ -19,12 +19,11 @@ final class EmployeeListService: EmployeeListServiceType {
         //static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json"
     }
     
-    func getList() async throws -> [EmployeeList] {
-        
+    func getList() async throws -> [Employee] {
         
         print("call getList")
         
-        guard var urlComponents = URLComponents(string: APIConstants.apiUrl) else {
+        guard let urlComponents = URLComponents(string: APIConstants.apiUrl) else {
             throw ApiError.invalidRequest("Invalid api request")
         }
         
@@ -32,18 +31,29 @@ final class EmployeeListService: EmployeeListServiceType {
             throw ApiError.invalidRequest("Invalid api url")
         }
         
-        
         let request = createRequestHeader(url: url)
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-            throw ApiError.invalidRequest("Unexpected server response")
+            throw ApiError.invalidResponse("Unexpected server response")
         }
         
-        print (data)
+        if statusCode > 299 {
+            throw ApiError.invalidResponse("Sever error code \(statusCode)")
+        }
         
-        return try JSONDecoder().decode([EmployeeList].self, from: data)
+        print(">>>>>>>>>>>>>>>>>>>>>>")
+        
+        let employees: Employees = try JSONDecoder().decode(Employees.self, from: data)
+        var employeeList: [Employee] = []
+        
+        for employee in employees.employees {
+            employeeList.append(employee)
+        }
+        print(">>>>>>>>>>>>>>>>>>>>>>")
+        
+        return employeeList
     }
     
     private func createRequestHeader(url: URL) -> URLRequest {

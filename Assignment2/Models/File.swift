@@ -7,7 +7,19 @@
 
 import Foundation
 
-struct EmployeeList: Codable, Hashable {
+struct Employees: Codable {
+    var employees: [Employee]
+    
+    private enum codingKeys: String, CodingKey {
+        case employees = "employees"
+    }
+    
+    init(employees: [Employee]) {
+        self.employees = employees
+    }
+}
+
+struct Employee: Codable {
     var id: String
     var fullName: String
     var phoneNumber: String

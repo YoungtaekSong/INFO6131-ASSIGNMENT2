@@ -12,17 +12,27 @@ struct EmployeeListView: View {
 
     var body: some View {
         NavigationStack {
+            /*
             List(vm.findEmployees, id:\.self.id) { item in
-                Text("test")
+                Text(item.fullName)
+                Text("----")
+            }
+             */
+        }
+        .searchable(text: $vm.searchText, prompt:"Search for employee")
+        .onChange(of: vm.searchText) { oldvalue, newValue in
+            Task {
+                await vm.search(for: newValue)
             }
         }
-        Text("Hello World")
+        .font(.subheadline)
+        .navigationTitle("Employee")
     }
 }
 
 struct EmployeeListSubRowView: View {
-    let item: EmployeeList
-    let onAction: (_ item: EmployeeList) -> Void
+    let item: Employee
+    let onAction: (_ item: Employee) -> Void
     
     var body: some View {
         HStack {

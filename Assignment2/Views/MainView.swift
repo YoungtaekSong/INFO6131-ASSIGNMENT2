@@ -13,7 +13,7 @@ struct MainView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             VStack {
-                EmptyView()
+                EmployeeListView()
             }
             .tabItem {
                 Label("Employee", systemImage: "person.3")

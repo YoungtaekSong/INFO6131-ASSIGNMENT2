@@ -9,7 +9,7 @@ import SwiftUI
 
 final class EmployeeListViewModel: ObservableObject {
     @Published var searchText: String = ""
-    @Published var findEmployees: [EmployeeList] = []
+    @Published var findEmployees: [Employee] = []
     
     private let service: EmployeeListServiceType
     
@@ -21,7 +21,7 @@ final class EmployeeListViewModel: ObservableObject {
     func search(for text: String) async {
         do {
             if text.isEmpty {
-                findEmployees = []
+                findEmployees = try await service.getList()
             } else {
                 findEmployees = try await service.getList()
             }
