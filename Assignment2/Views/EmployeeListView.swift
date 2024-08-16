@@ -15,8 +15,7 @@ struct EmployeeListView: View {
             List(vm.findEmployees, id:\.self.id) { item in
                 NavigationLink(destination: EmployeeDetail(employee: item)) {
                     HStack {
-                        HStack {
-                            
+                        VStack {
                             if let url = URL(string: item.photoUrlSmall) {
                                 AsyncImage(url: url) { image in
                                     image
@@ -29,14 +28,11 @@ struct EmployeeListView: View {
                                 .clipShape(Circle())
                             }
                         }
-                        VStack {
-                            HStack {
-                                Text(item.fullName)
-                                    .font(.headline)
-                            }
-                            HStack {
-                                Text(item.team)
-                            }
+                        VStack(alignment: .leading) {
+                            Text(item.fullName)
+                                .font(.headline)
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            Text(item.team)
                         }
                     }
                 }
@@ -58,6 +54,7 @@ struct EmployeeListView: View {
     }
 }
 
+/*
 struct EmployeeListSubRowView: View {
     let item: Employee
     let onAction: (_ item: Employee) -> Void
@@ -75,6 +72,7 @@ struct EmployeeListSubRowView: View {
         }
     }
 }
+ */
 
 #Preview {
     EmployeeListView()
