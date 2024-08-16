@@ -8,7 +8,7 @@
 import Foundation
 
 struct EmployeeList: Codable, Hashable {
-    var uuid: String
+    var id: String
     var fullName: String
     var phoneNumber: String
     var emailAddress: String
@@ -19,7 +19,7 @@ struct EmployeeList: Codable, Hashable {
     var employeeType: String
     
     private enum CodingKeys: String, CodingKey {
-        case uuid = "uuid"
+        case id = "uuid"
         case fullName = "full_name"
         case phoneNumber = "phone_number"
         case emailAddress = "email_address"
@@ -30,8 +30,8 @@ struct EmployeeList: Codable, Hashable {
         case employeeType = "employee_type"
     }
     
-    init(uuid: String, fullName: String, phoneNumber: String, emailAddress: String, biography: String, photoUrlSmall: String, photoUrlLarge: String, team: String, employeeType: String) {
-        self.uuid = uuid
+    init(id: String, fullName: String, phoneNumber: String, emailAddress: String, biography: String, photoUrlSmall: String, photoUrlLarge: String, team: String, employeeType: String) {
+        self.id = id
         self.fullName = fullName
         self.phoneNumber = phoneNumber
         self.emailAddress = emailAddress

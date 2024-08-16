@@ -20,6 +20,10 @@ final class EmployeeListService: EmployeeListServiceType {
     }
     
     func getList() async throws -> [EmployeeList] {
+        
+        
+        print("call getList")
+        
         guard var urlComponents = URLComponents(string: APIConstants.apiUrl) else {
             throw ApiError.invalidRequest("Invalid api request")
         }
@@ -36,6 +40,8 @@ final class EmployeeListService: EmployeeListServiceType {
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
             throw ApiError.invalidRequest("Unexpected server response")
         }
+        
+        print (data)
         
         return try JSONDecoder().decode([EmployeeList].self, from: data)
     }
