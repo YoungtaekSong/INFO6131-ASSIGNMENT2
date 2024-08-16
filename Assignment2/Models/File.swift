@@ -29,6 +29,19 @@ struct Employee: Codable, Hashable {
     var photoUrlLarge: String
     var team: String
     var employeeType: String
+
+    var employeeTypeStr: String {
+        switch employeeType {
+            case "FULL_TIME":
+                "Full Time"
+            case "PART_TIME":
+                "Part Time"
+            case "CONTRACTOR":
+                "Contractor"
+            default:
+                "UNKNOWN"
+        }
+    }
     
     private enum CodingKeys: String, CodingKey {
         case id = "uuid"

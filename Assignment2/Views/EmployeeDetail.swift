@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct EmployeeDetail: View {
+    @State private var imageURL: URL?
     let employee: Employee
-   
+    
     var body: some View {
+        
         VStack(alignment: .center) {
-            if let url = URL(string: employee.photoUrlLarge) {
+            Text(employee.fullName)
+                .font(.largeTitle)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            
+            if let url = imageURL {
                 AsyncImage(url: url) { image in
                     image
                         .resizable()
@@ -20,12 +26,24 @@ struct EmployeeDetail: View {
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 300, height: 300)
+                .frame(width: 350, height: 350)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            
-            Text(employee.fullName)
+
+            VStack(alignment: .leading) {
+                EmployeeDetailRow(name: "Phone", value: employee.phoneNumber)
+                EmployeeDetailRow(name: "Email", value: employee.emailAddress)
+                EmployeeDetailRow(name: "Team", value: employee.team)
+                EmployeeDetailRow(name: "Type", value: employee.employeeTypeStr)
+                EmployeeDetailRow(name: "Biography", value: employee.biography)
+            }.padding(20)
             Spacer()
+
+        }
+        .onAppear() {
+            Task {
+                imageURL = URL(string: employee.photoUrlLarge)
+            }
         }
     }
 }

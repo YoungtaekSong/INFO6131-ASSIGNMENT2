@@ -15,7 +15,11 @@ final class EmployeeListService: EmployeeListServiceType {
     
     private struct APIConstants {
         static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees.json"
+
+        // for malformed test
         //static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_malformed.json"
+
+        // for empty test
         //static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json"
     }
     
