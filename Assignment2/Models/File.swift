@@ -19,7 +19,7 @@ struct Employees: Codable {
     }
 }
 
-struct Employee: Codable {
+struct Employee: Codable, Hashable {
     var id: String
     var fullName: String
     var phoneNumber: String

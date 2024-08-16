@@ -50,7 +50,6 @@ final class EmployeeListService: EmployeeListServiceType {
             if searchText.isEmpty {
                 employeeList.append(employee)
             } else if employee.fullName.lowercased().contains(searchText.lowercased()) {
-                print("Add")
                 employeeList.append(employee)
             }
         }

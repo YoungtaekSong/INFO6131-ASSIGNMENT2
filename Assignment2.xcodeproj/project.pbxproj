@@ -17,6 +17,7 @@
 		49BA84632C6D97F400534BA2 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84622C6D97F400534BA2 /* EmployeeListView.swift */; };
 		49BA84652C6D981A00534BA2 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */; };
 		49BA84672C6EEF4500534BA2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84662C6EEF4500534BA2 /* MainView.swift */; };
+		49BA84692C6F25DD00534BA2 /* EmployeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		49BA84622C6D97F400534BA2 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		49BA84662C6EEF4500534BA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				49BA84662C6EEF4500534BA2 /* MainView.swift */,
 				49BA84622C6D97F400534BA2 /* EmployeeListView.swift */,
 				49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */,
+				49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				49BA84672C6EEF4500534BA2 /* MainView.swift in Sources */,
 				49BA844E2C69BA0300534BA2 /* ContentView.swift in Sources */,
 				49BA84632C6D97F400534BA2 /* EmployeeListView.swift in Sources */,
+				49BA84692C6F25DD00534BA2 /* EmployeeDetail.swift in Sources */,
 				49BA845E2C6AF89000534BA2 /* EmployeeListService.swift in Sources */,
 				49BA844C2C69BA0300534BA2 /* Assignment2App.swift in Sources */,
 				49BA84652C6D981A00534BA2 /* EmployeeListViewModel.swift in Sources */,
