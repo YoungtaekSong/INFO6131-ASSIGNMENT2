@@ -19,10 +19,7 @@ final class EmployeeListService: EmployeeListServiceType {
         //static let apiUrl = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json"
     }
     
-    func getList(for searchText: String) async throws -> [Employee] {
-        
-        print("call getList => " + searchText)
-        
+    func getList() async throws -> [Employee] {
         guard let urlComponents = URLComponents(string: APIConstants.apiUrl) else {
             throw ApiError.invalidRequest("Invalid api request")
         }
@@ -44,14 +41,19 @@ final class EmployeeListService: EmployeeListServiceType {
         }
         
         let employees: Employees = try JSONDecoder().decode(Employees.self, from: data)
+        return employees.employees
+    }
+    
+    func getList(for searchText: String) async throws -> [Employee] {
         var employeeList: [Employee] = []
-        
-        for employee in employees.employees {
-            if employee.fullName.lowercased().contains(searchText.lowercased()) {
+        for employee in try await self.getList() {
+            if searchText.isEmpty {
+                employeeList.append(employee)
+            } else if employee.fullName.lowercased().contains(searchText.lowercased()) {
+                print("Add")
                 employeeList.append(employee)
             }
         }
-        
         return employeeList
     }
     
