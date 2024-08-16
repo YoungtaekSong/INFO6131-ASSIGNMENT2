@@ -54,26 +54,6 @@ struct EmployeeListView: View {
     }
 }
 
-/*
-struct EmployeeListSubRowView: View {
-    let item: Employee
-    let onAction: (_ item: Employee) -> Void
-    
-    var body: some View {
-        HStack {
-            Image(item.photoUrlSmall).imageScale(.large)
-            VStack {
-                Text(item.fullName)
-                Text(item.team)
-            }
-        }
-        .onTapGesture {
-            onAction(item)
-        }
-    }
-}
- */
-
 #Preview {
     EmployeeListView()
 }
