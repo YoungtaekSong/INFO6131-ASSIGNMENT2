@@ -13,18 +13,12 @@ struct EmployeeListView: View {
     var body: some View {
         NavigationStack {
             List(vm.findEmployees, id:\.self.id) { item in
-                /*
-                 EmployeeListSubRowView(item: item) { [self] item in
-                 vm.searchText = item.fullName
-                 }
-                 */
                 NavigationLink(destination: EmployeeDetail(employee: item)) {
-                    HStack {
+                    VStack {
                         Image(item.photoUrlSmall).imageScale(.large)
-                        VStack {
-                            Text(item.fullName)
-                            Text(item.team)
-                        }
+                        Text(item.photoUrlSmall)
+                        Text(item.fullName)
+                        Text(item.team)
                     }
                 }
             }
