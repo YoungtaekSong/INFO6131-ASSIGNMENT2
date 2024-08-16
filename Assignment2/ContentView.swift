@@ -20,7 +20,6 @@ struct ContentView: View {
         } content: {
             OnboardingView(showOnboardingScreen: $showOnboardingScreen)
         }
-        .padding()
     }
 }
 
