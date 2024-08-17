@@ -27,7 +27,7 @@ struct SettingsView: View {
                 EmployeeDetailRow(name: "Name", value: "Young Taek Song")
                 EmployeeDetailRow(name: "StudentID", value: "1122390")
              
-            }.padding(20)
+            }.padding()
             Spacer()
         }
         .onAppear() {
@@ -35,7 +35,7 @@ struct SettingsView: View {
                 imageURL = URL(string: "https://gravatar.com/avatar/debfb8d6545fe86d2b69248cbf97d0da?size=256&cache=1723855058900")
             }
         }
-        .padding(40)
+        .padding()
     }
 }
 

@@ -29,6 +29,13 @@ struct EmployeeDetail: View {
                 .frame(width: 350, height: 350)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
             }
+            
+            VStack(alignment: .center) {
+                Button("Reload Image") {
+                    imageURL = URL(string: employee.photoUrlLarge)
+                }
+                .padding()
+            }
 
             VStack(alignment: .leading) {
                 EmployeeDetailRow(name: "Phone", value: employee.phoneNumber)
