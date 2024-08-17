@@ -11,7 +11,7 @@ struct SettingsView: View {
     @State private var imageURL: URL?
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             if let url = imageURL {
                 AsyncImage(url: url) { image in
                     image
