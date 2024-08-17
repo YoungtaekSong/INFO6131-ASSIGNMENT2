@@ -19,6 +19,7 @@
 		49BA84672C6EEF4500534BA2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84662C6EEF4500534BA2 /* MainView.swift */; };
 		49BA84692C6F25DD00534BA2 /* EmployeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */; };
 		49BA846B2C700D3500534BA2 /* EmployeeDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA846A2C700D3500534BA2 /* EmployeeDetailRow.swift */; };
+		49BA846D2C70271200534BA2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA846C2C70271200534BA2 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		49BA84662C6EEF4500534BA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetail.swift; sourceTree = "<group>"; };
 		49BA846A2C700D3500534BA2 /* EmployeeDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailRow.swift; sourceTree = "<group>"; };
+		49BA846C2C70271200534BA2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				49BA84642C6D981A00534BA2 /* EmployeeListViewModel.swift */,
 				49BA84682C6F25DD00534BA2 /* EmployeeDetail.swift */,
 				49BA846A2C700D3500534BA2 /* EmployeeDetailRow.swift */,
+				49BA846C2C70271200534BA2 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				49BA844C2C69BA0300534BA2 /* Assignment2App.swift in Sources */,
 				49BA84652C6D981A00534BA2 /* EmployeeListViewModel.swift in Sources */,
 				49BA845C2C6AF7E600534BA2 /* APIError.swift in Sources */,
+				49BA846D2C70271200534BA2 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,11 +19,7 @@ struct MainView: View {
                 Label("Employee", systemImage: "person.3")
             }
             VStack {
-                Text("Settings").font(.title)
-                Spacer()
-                Text("Young Taek Song")
-                Text("1122390")
-                Spacer()
+                SettingsView()
             }
             .tabItem {
                 Label("Settings", systemImage: "gear")
